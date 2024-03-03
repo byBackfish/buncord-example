@@ -1,0 +1,12 @@
+{
+  "name": "buncord-example",
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "start": "bun run src/index.ts"
+  },
+  "dependencies": {
+    "@bybackfish/buncord": "^0.2.3",
+    "discord.js": "^14.14.1",
+    "zod": "^3.22.4"
+  }
+}
