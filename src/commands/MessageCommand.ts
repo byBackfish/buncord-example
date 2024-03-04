@@ -22,6 +22,7 @@ export default class MessageCommand extends BunCommand {
     });
   }
 
+  /* This will only be execute if /<name> is called */
   public async execute(
     interaction: CommandInteraction,
     /* The arguments from the options above. The Record key is the name of the argument, specified above*/
