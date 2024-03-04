@@ -1,9 +1,10 @@
-import "./env";
+import './env';
 
-import { BunClient } from "@bybackfish/buncord";
-import { IntentsBitField } from "discord.js";
-import { join } from "path";
+import { BunClient } from '@bybackfish/buncord';
+import { IntentsBitField } from 'discord.js';
+import { join } from 'path';
 
+/* Creating the BunClient */
 const Client = new BunClient({
   intents: [
     IntentsBitField.Flags.Guilds,
@@ -11,12 +12,15 @@ const Client = new BunClient({
     IntentsBitField.Flags.GuildPresences,
   ],
   commands: {
-    commandDirPath: join(__dirname, "./commands"),
+    /* The relative path to where all the commands are in */
+    commandDirPath: join(__dirname, './commands'),
   },
   listeners: {
-    listenerDirPath: join(__dirname, "./listeners"),
+    /* The relative path to where all the listeners are in */
+    listenerDirPath: join(__dirname, './listeners'),
   },
   token: process.env.DISCORD_TOKEN,
 });
 
+/* Logging in */
 Client.login();

@@ -1,12 +1,15 @@
-import { BunListener } from "@bybackfish/buncord";
-import { Client, OAuth2Scopes, PermissionFlagsBits } from "discord.js";
+import { BunListener } from '@bybackfish/buncord';
+import { Client, OAuth2Scopes, PermissionFlagsBits } from 'discord.js';
 
-export default class ReadyListener extends BunListener<"ready"> {
+/* Specify the event name as a generic, so that "execute" knows the arguments */
+export default class ReadyListener extends BunListener<'ready'> {
   constructor() {
-    super("ready");
+    /* The event name */
+    super('ready');
   }
 
-  public execute(client: Client<true>) {
+  /* The execute function, arguments are fetched from the generic for type safety */
+  public async execute(client: Client<true>) {
     let invite = client.generateInvite({
       scopes: [OAuth2Scopes.Bot, OAuth2Scopes.ApplicationsCommands],
       permissions: PermissionFlagsBits.Administrator,
